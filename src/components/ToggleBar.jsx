@@ -4,7 +4,8 @@ import { ProjectPage } from "../pages/ProjectPage";
 import { ForumPage } from "../pages/ForumPage";
 export function ToggleBar() {
   return (
-    <div className="pt-3">
+    <div className="h-full">
+      <div className="pt-3 h-screen">
       <Tabs variant="soft-rounded" colorScheme="red" align="center">
         <TabList>
           <Tab>Events</Tab>
@@ -24,5 +25,7 @@ export function ToggleBar() {
         </TabPanels>
       </Tabs>
     </div>
+    </div>
+    
   );
 }

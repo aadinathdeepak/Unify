@@ -38,7 +38,7 @@ export function ProjectPage() {
   }
 
   return (
-    <div className="bg-primary rounded-xl p-6 w-[1000px] ml-32">
+    <div className="bg-primary rounded-xl p-6 w-[1000px] ml-32 overflow-y-auto h-[800px]">
       <SearchBar onChange={(e)=>setFilter(e.target.value)}/>
       {projects.map((e) => (
         <ProjectCard
