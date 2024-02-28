@@ -12,7 +12,41 @@ const client = new Client()
 const database = new Databases(client);
 
 export function AddProject() {
+    const [name, setName] = useState("");
+    const [description, setDescription] = useState("");
+    const [requirements, setRequirements] = useState("");
+    const [isSubmitting, setIsSubmitting] = useState(false);
   
+    const handleSubmit = () => {
+      setIsSubmitting(true);
+  
+      const project = {
+        name,
+        description,
+        skills: requirements.split(" "),
+      };
+  
+      const promise = database.createDocument(
+        "65df74df667cadaa97e1",
+        "65df778338999c7e4b03",
+        ID.unique(),
+        project
+      );
+  
+      promise.then(
+        (response) => {
+          console.log(response);
+          setName("");
+          setDescription("");
+          setRequirements("");
+          setIsSubmitting(false);
+        },
+        (error) => {
+          console.error(error);
+          setIsSubmitting(false);
+        }
+      );
+    };
 
   return (
     <div className="bg-background h-full w-screen pt-4">
