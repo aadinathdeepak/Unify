@@ -11,10 +11,13 @@ import {
 import logo from ".././assets/logo.png";
 import search from ".././assets/SearchWhite.png";
 import mathlogo from ".././assets/PlusMath.png";
+import notification from ".././assets/Notification.png";
+import user from ".././assets/user.png";
 import { UserChat } from "./UserChat";
 import { useDisclosure } from '@chakra-ui/react';
 import { SearchInputBox } from './SearchInputBox';
 import { UserRequestButtton } from './UserRequestButton';
+import { NotificationPage } from './NotificationPage';
 
 export function DirectMsg(){
     const { isOpen, onOpen, onClose } = useDisclosure()
@@ -49,10 +52,13 @@ export function DirectMsg(){
                     </DrawerContent>
                 </Drawer>
             </div>
-            <div className="bg-primary mx-6 h-[450px]">
+            <div className="bg-primary mx-6 h-[400px]">
                 <UserChat label={'Friend 1'}/>
                 <UserChat label={'Friend 2'}/>
                 <UserChat label={'Friend 3'}/>
+            </div>
+            <div>
+                <NotificationPage/>
             </div>
     </div>
 }
