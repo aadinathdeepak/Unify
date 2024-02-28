@@ -3,7 +3,7 @@ import { Stack, Heading, Image, Text, Button } from "@chakra-ui/react";
 
 export function ForumCard({ question, description }) {
   return (
-    <div >
+    <div className="w-10/12">
       <Card
         direction={{ base: "column", sm: "row" }}
         overflow="hidden"

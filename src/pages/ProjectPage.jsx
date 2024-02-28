@@ -40,6 +40,7 @@ export function ProjectPage() {
   return (
     <div className="bg-primary rounded-xl p-6 w-[1000px] ml-32 overflow-y-auto h-[800px]">
       <SearchBar onChange={(e)=>setFilter(e.target.value)}/>
+      <div className="flex flex-col">
       {projects.map((e) => (
         <ProjectCard
           title={e.name}
@@ -47,6 +48,8 @@ export function ProjectPage() {
           Skills={e.skills}
         />
       ))}
+      </div>
+      
     </div>
   );
 }
