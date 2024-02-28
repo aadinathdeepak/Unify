@@ -2,36 +2,56 @@ import logo from ".././assets/logo.png";
 import cancel from ".././assets/cancel.png";
 import { ForumInputBox } from "../components/ForumInputBox";
 import { ForumInputBoxBig } from "../components/ForumInputBoxBig";
+import { useState } from "react";
+import { Client, Databases, ID } from "appwrite";
 
-export function AddProject(){
-    return <div className="bg-background h-full w-screen pt-4">
-        <div className="flex flex-wrap">
-            <div className="w-5/6">
-            <img className="h-[90px] ml-12 pt-4 justify-start" src={logo}/>
-            </div>
-            <img className="h-[50px] ml-4 mt-6 pt-4" src={cancel}/>
+const client = new Client()
+  .setEndpoint("https://cloud.appwrite.io/v1")
+  .setProject("65dedcff9fc1f5555b01");
+
+const database = new Databases(client);
+
+export function AddProject() {
+  
+
+  return (
+    <div className="bg-background h-full w-screen pt-4">
+      <div className="flex flex-wrap">
+        <div className="w-5/6">
+          <img
+            className="h-[90px] ml-12 pt-4 justify-start"
+            src={logo}
+            alt="Logo"
+          />
         </div>
-        <div className="flex flex-wrap flex-col m-4 items-center">
-            <h1 className="flex flex-col text-text items-center text-[30px] font-bold">
-                Add a Project
-            </h1>
-            <p className="text-text mt-6">
-                Project name
-            </p>
-            <ForumInputBox/>
-            <p className="text-text mt-2">
-                Description
-            </p>
-            <ForumInputBoxBig/>
-            <p className="text-text mt-2">
-                Requirements
-            </p>
-            <ForumInputBoxBig/>
-            <div>
-                <button className="bg-black text-text mt-4 p-4 px-6 font-extrabold rounded-[23px]">
-                    Submit
-                </button>
-            </div>
+        <img className="h-[50px] ml-4 mt-6 pt-4" src={cancel} alt="Cancel" />
+      </div>
+      <div className="flex flex-wrap flex-col m-4 items-center">
+        <h1 className="flex flex-col text-text items-center text-[30px] font-bold">
+          Add a Project
+        </h1>
+        <p className="text-text mt-6">Project name</p>
+        <ForumInputBox value={name} onChange={(e) => setName(e.target.value)} />
+        <p className="text-text mt-2">Description</p>
+        <ForumInputBoxBig
+          value={description}
+          onChange={(e) => setDescription(e.target.value)}
+        />
+        <p className="text-text mt-2">Requirements</p>
+        <ForumInputBoxBig
+          value={requirements}
+          onChange={(e) => setRequirements(e.target.value)}
+        />
+        <div>
+          <button
+            className="bg-black text-text mt-4 p-4 px-6 font-extrabold rounded-[23px]"
+            onClick={handleSubmit}
+            disabled={isSubmitting}
+          >
+            {isSubmitting ? "Submitting..." : "Submit"}
+          </button>
         </div>
+      </div>
     </div>
+  );
 }
