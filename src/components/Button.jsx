@@ -1,6 +1,6 @@
 export function Button({ label,onClick }) {
     return (
-      <div className="pb-2 pt-4">
+      <div className="pb-2 pt-4 rounded-3xl">
         <button
           type="button"
           onClick={onClick}
