@@ -3,8 +3,10 @@ import { InputBox } from "../components/InputBox";
 import { Button } from "../components/Button";
 import logo from ".././assets/logo.png";
 import { LoginButton } from "../components/LoginButton";
+import { useNavigate } from "react-router";
 
 export function Login() {
+  const navigate = useNavigate();
   return (
     <div className="flex h-screen justify-center bg-background text-text">
       <div className="flex flex-col justify-center ">
@@ -17,7 +19,7 @@ export function Login() {
           </div>
           <InputBox label={"Email"} placeholder={"college mail"} />
           <InputBox label={"Password"} placeholder={"Password"} />
-          <LoginButton label={"Login"} />
+          <LoginButton label={"Login"} onClick={()=> navigate('/home')}/>
         </div>
       </div>
     </div>
