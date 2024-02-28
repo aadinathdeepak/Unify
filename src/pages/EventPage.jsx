@@ -70,6 +70,7 @@ export function EventPage() {
   ]);
 
   return <div className="bg-primary rounded-xl p-6">
+    <div className="flex flex-col">
     <SearchBar />
       {events.map((e) => (
         <EventCard
@@ -80,5 +81,7 @@ export function EventPage() {
           imageURL={e.imageURL}
         />
       ))}
+    </div>
+    
   </div>
 }
