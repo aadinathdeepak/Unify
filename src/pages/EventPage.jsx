@@ -80,5 +80,5 @@ export function EventPage() {
           imageURL={e.imageURL}
         />
       ))}
-  </div>
+    </div>
 }

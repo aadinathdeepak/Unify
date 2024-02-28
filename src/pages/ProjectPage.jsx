@@ -65,6 +65,7 @@ export function ProjectPage() {
   ]);
   return (
     <div className="bg-primary rounded-xl p-6 w-[1000px] ml-32">
+
       <SearchBar />
       {projects.map((e) => (
         <ProjectCard
