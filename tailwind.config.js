@@ -13,7 +13,8 @@ export default {
       white:"#FFFFFF",
       secondary:"#16011B",
       primary:"#25022E",
-      directMsg:"#16011B"
+      directMsg:"#16011B",
+      inputbox2:"#906E99"
     }
   },
   plugins: [],
