@@ -9,7 +9,9 @@ export default {
     colors:{
       background:"#480359",
       text:"#DEDEDE",
-      inputbox:"#361A3D"
+      inputbox:"#361A3D",
+      white:"#FFFFFF",
+      
     }
   },
   plugins: [],
