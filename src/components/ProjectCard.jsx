@@ -3,7 +3,7 @@ import { Stack, Heading, Text, Button } from "@chakra-ui/react";
 
 export function ProjectCard({ title, description, Skills }) {
   return (
-    <div>
+    <div className="w-10/12">
       <Card
         direction={{ base: "column", sm: "row" }}
         overflow="hidden"
@@ -18,9 +18,8 @@ export function ProjectCard({ title, description, Skills }) {
 
             <Heading size="sm">Skills Required</Heading>
             <div className="flex justify-center gap-5">
-            {Skills.map((skill)=><Text py="2">{skill+""}</Text>)}
+            {Skills.map((skill)=><Text py="2">{skill}</Text>)}
             </div>
-            
           </CardBody>
 
           <CardFooter>
