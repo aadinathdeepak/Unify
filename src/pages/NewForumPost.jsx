@@ -2,6 +2,13 @@ import logo from ".././assets/logo.png";
 import cancel from ".././assets/cancel.png";
 import { ForumInputBox } from "../components/ForumInputBox";
 import { ForumInputBoxBig } from "../components/ForumInputBoxBig";
+import { Client, Databases, ID } from "appwrite";
+
+const client = new Client()
+  .setEndpoint("https://cloud.appwrite.io/v1")
+  .setProject("65dedcff9fc1f5555b01");
+
+const database = new Databases(client);
 
 export function NewForumPost(){
     return <div className="bg-background h-screen w-screen pt-4">

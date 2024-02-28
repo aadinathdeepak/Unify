@@ -2,10 +2,12 @@ import { useEffect, useState } from "react";
 import { ProjectCard } from "../components/ProjectCard";
 import { SearchBar } from "../components/SearchBar";
 import { Client, Databases, Query } from "appwrite";
+import { useNavigate } from "react-router";
 
 export function ProjectPage() {
   const [projects, setProjects] = useState([]);
   const [filter,setFilter] = useState('');
+  const navigate = useNavigate();
   useEffect(() => {
     const client = new Client()
       .setEndpoint("https://cloud.appwrite.io/v1")
@@ -32,14 +34,14 @@ export function ProjectPage() {
 
   if(projects.length==0){
     return <div className="bg-primary rounded-xl p-6 w-[1000px] ml-32">
-      <SearchBar onChange={(e)=>setFilter(e.target.value)} filter={filter}/>
+      <SearchBar onChange={(e)=>setFilter(e.target.value)} filter={filter} onClickHandler={()=>navigate("/addproject")}/>
       <div className="py-3 text-xl text-white">Loading...</div>
     </div>
   }
 
   return (
     <div className="bg-primary rounded-xl p-6 w-[1000px] ml-32 overflow-y-auto h-[800px]">
-      <SearchBar onChange={(e)=>setFilter(e.target.value)}/>
+      <SearchBar onChange={(e)=>setFilter(e.target.value)} onClickHandler={()=>navigate("/addproject")}/>
       <div className="flex flex-col">
       {projects.map((e) => (
         <ProjectCard
