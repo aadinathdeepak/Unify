@@ -1,5 +1,5 @@
 import { Card, CardBody, CardFooter } from "@chakra-ui/react";
-import { Stack, Heading, Text, Button } from "@chakra-ui/react";
+import { Stack, Heading, Image, Text, Button } from "@chakra-ui/react";
 
 export function ProjectCard({ title, description, Skills }) {
   return (
@@ -18,15 +18,18 @@ export function ProjectCard({ title, description, Skills }) {
 
             <Heading size="sm">Skills Required</Heading>
             <div className="flex justify-center gap-5">
-            {Skills.map((skill)=><Text py="2">{skill}</Text>)}
+              {Skills.map((skill) => (
+                <Text py="2">{skill}</Text>
+              ))}
             </div>
           </CardBody>
-
-          <CardFooter>
-            <Button variant="solid" colorScheme="purple">
-              Collaborate
-            </Button>
-          </CardFooter>
+          <div className="flex justify-center">
+            <CardFooter>
+              <Button variant="solid" colorScheme="purple">
+                Collaborate
+              </Button>
+            </CardFooter>
+          </div>
         </Stack>
       </Card>
     </div>

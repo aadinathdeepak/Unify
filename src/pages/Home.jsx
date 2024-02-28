@@ -3,9 +3,12 @@ import {DirectMsg} from "../components/DirectMsg"
 export function Home() {
   
   return (
-    <div className="h-full bg-background flex ">
+    <div className="h-full bg-background flex">
         <DirectMsg/>
-      <ToggleBar/>
+        <div className="flex justify-center">
+        <ToggleBar/>
+        </div>
+     
     </div>
   );
 }
