@@ -3,7 +3,7 @@ import { Stack, Heading, Text, Button } from "@chakra-ui/react";
 
 export function ProjectCard({ title, description, Skills }) {
   return (
-    <div className="w-10/12">
+    <div>
       <Card
         direction={{ base: "column", sm: "row" }}
         overflow="hidden"
