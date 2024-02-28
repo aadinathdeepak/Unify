@@ -11,7 +11,9 @@ export default {
       text:"#DEDEDE",
       inputbox:"#361A3D",
       white:"#FFFFFF",
-      
+      secondary:"#16011B",
+      directMsg:"25022E",
+      primary:"#16011B"
     }
   },
   plugins: [],
