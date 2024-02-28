@@ -69,7 +69,7 @@ export function EventPage() {
     // Add more event objects as needed
   ]);
 
-  return <div className="bg-primary rounded-xl p-6 ml-32">
+  return <div className="bg-primary rounded-xl p-6 w-[1000px] ml-32">
     <SearchBar />
       {events.map((e) => (
         <EventCard

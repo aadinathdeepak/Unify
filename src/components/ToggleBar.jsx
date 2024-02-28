@@ -1,6 +1,7 @@
 import { Tabs, TabList, TabPanels, Tab, TabPanel } from "@chakra-ui/react";
 import { EventPage } from "../pages/EventPage";
 import { ProjectPage } from "../pages/ProjectPage";
+import { ForumPage } from "../pages/ForumPage";
 export function ToggleBar() {
   return (
     <div className="pt-3">
@@ -8,6 +9,7 @@ export function ToggleBar() {
         <TabList>
           <Tab>Events</Tab>
           <Tab>Projects</Tab>
+          <Tab>Forums</Tab>
         </TabList>
         <TabPanels>
           <TabPanel>
@@ -15,6 +17,9 @@ export function ToggleBar() {
           </TabPanel>
           <TabPanel>
             <ProjectPage />
+          </TabPanel>
+          <TabPanel>
+            <ForumPage />
           </TabPanel>
         </TabPanels>
       </Tabs>
