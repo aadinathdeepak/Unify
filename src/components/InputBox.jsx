@@ -7,7 +7,7 @@ export function InputBox({ label, placeholder, onChange }) {
         type="text"
         onChange={onChange}
         placeholder={placeholder}
-        className="w-10/12 h-11 px-2 py-1 rounded-md border-slate-200 bg-inputbox"
+        className="w-10/12 h-11 px-2 py-1 rounded-2xl border-slate-200 bg-inputbox"
       />
       </div>
       
