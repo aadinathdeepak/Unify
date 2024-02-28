@@ -14,7 +14,8 @@ export default {
       secondary:"#16011B",
       primary:"#25022E",
       directMsg:"#16011B",
-      inputbox2:"#906E99"
+      inputbox2:"#906E99",
+      black:"#000000"
     }
   },
   plugins: [],

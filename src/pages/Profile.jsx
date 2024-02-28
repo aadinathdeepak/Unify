@@ -20,7 +20,7 @@ export function Profile(){
                             Name
                         </p>
                     </div>
-                    <div className="flex items-center">
+                    <div className="flex items-center ml-12">
                         <ProfileInputBox/>
                     </div>
                 </div>
@@ -30,7 +30,7 @@ export function Profile(){
                             College
                         </p>
                     </div>
-                    <div className="flex items-center">
+                    <div className="flex items-center ml-8">
                         <ProfileInputBox/>
                     </div>
                 </div>
@@ -40,7 +40,7 @@ export function Profile(){
                             Branch
                         </p>
                     </div>
-                    <div className="flex items-center">
+                    <div className="flex items-center ml-8">
                         <ProfileInputBox/>
                     </div>
                 </div>
@@ -50,7 +50,7 @@ export function Profile(){
                             Contact
                         </p>
                     </div>
-                    <div className="flex items-center">
+                    <div className="flex items-center ml-8">
                         <ProfileInputBox/>
                     </div>
                 </div>
@@ -70,7 +70,7 @@ export function Profile(){
                             Projects
                         </p>
                     </div>
-                    <div className="flex items-center">
+                    <div className="flex items-center ml-4">
                         <ProfileInputBoxBig/>
                     </div>
                 </div>
