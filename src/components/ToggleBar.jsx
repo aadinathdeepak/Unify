@@ -4,14 +4,16 @@ import { ProjectPage } from "../pages/ProjectPage";
 import { ForumPage } from "../pages/ForumPage";
 export function ToggleBar() {
   return (
-    <div className="h-full">
-      <div className="pt-3 h-screen">
+    <div className="h-screen">
+      <div className="pt-3 ">
       <Tabs variant="soft-rounded" colorScheme="purple" align="center">
+        <div className="border rounded-3xl w-96 bg-text">
         <TabList>
           <Tab>Events</Tab>
           <Tab>Projects</Tab>
           <Tab>Forums</Tab>
         </TabList>
+        </div>
         <TabPanels>
           <TabPanel>
             <EventPage />
