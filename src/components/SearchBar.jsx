@@ -1,5 +1,6 @@
 import { useState } from "react";
 import searchIcon from "../assets/Search.png";
+import addnew from ".././assets/AddNew.png";
 
 export function SearchBar({onChange,filter}) {
   return (
@@ -18,6 +19,7 @@ export function SearchBar({onChange,filter}) {
           className="absolute right-2 top-1/2 transform -translate-y-1/2 cursor-pointer"
         />
       </div>
+        <img className="size-9 ml-7" src={addnew}/>
     </div>
   );
 }
