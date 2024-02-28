@@ -7,7 +7,9 @@ export default {
   theme: {
     extend: {},
     colors:{
-      background:"#480359"
+      background:"#480359",
+      text:"#DEDEDE",
+      inputbox:"#361A3D"
     }
   },
   plugins: [],

@@ -4,9 +4,9 @@ import { Button } from "../components/Button";
 
 export function Login() {
   return (
-    <div className="flex h-screen justify-center bg-background">
+    <div className="flex h-screen justify-center bg-background text-text">
       <div className="flex flex-col justify-center ">
-        <div className="border bg-[#6D357A] rounded-xl w-96 h-max p-3 px-4">
+        <div className="bg-[#6D357A] rounded-xl w-96 h-max p-3 px-4">
           <div className="text-center">
             <Heading label={"Login"} />
           </div>
