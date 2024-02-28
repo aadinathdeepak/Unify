@@ -3,14 +3,15 @@ import { Stack, Heading, Image, Text, Button } from "@chakra-ui/react";
 
 export function ProjectCard({ title, description, Skills }) {
   return (
-    <div>
+    <div >
       <Card
         direction={{ base: "column", sm: "row" }}
         overflow="hidden"
         variant="outline"
         className="m-4"
       >
-        <Stack>
+        <div className="flex">
+        <Stack >
           <CardBody>
             <Heading size="md">{title}</Heading>
 
@@ -31,6 +32,8 @@ export function ProjectCard({ title, description, Skills }) {
             </CardFooter>
           </div>
         </Stack>
+        </div>
+        
       </Card>
     </div>
   );
