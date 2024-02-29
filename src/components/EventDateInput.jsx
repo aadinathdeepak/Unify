@@ -1,4 +1,4 @@
-export function ForumInputBoxBig({ label, placeholder, onChange,value}) {
+export function EventDateInput({ label, placeholder, onChange,value}) {
   return (
     <div>
       <div className="flex justify-center ">
@@ -6,7 +6,7 @@ export function ForumInputBoxBig({ label, placeholder, onChange,value}) {
         type="text"
         onChange={onChange}
         placeholder={placeholder}
-        className="w-[550px] h-40 px-4 py-1 rounded-2xl border-slate-200 bg-inputbox2 my-[15px]"
+        className="w-40 h-12 rounded-2xl border-slate-200 bg-inputbox2 placeholder:pl-8 placeholder:text-white"
         value={value}
       />
       </div>
