@@ -2,10 +2,12 @@ import { useEffect, useState } from "react";
 import { SearchBar } from "../components/SearchBar";
 import { EventCard } from "../components/EventCard";
 import { Client, Databases, Query } from "appwrite";
+import { useNavigate } from "react-router";
 
 export function EventPage() {
   const [events, setEvents] = useState([]);
   const [filter, setFilter] = useState("");
+  const navigate = useNavigate();
 
   useEffect(() => {
     const client = new Client()
@@ -17,7 +19,7 @@ export function EventPage() {
     let promise = databases.listDocuments(
       "65df74df667cadaa97e1",
       "65df7f05999aba0a5552",
-      [Query.startsWith("question", filter)]
+      [Query.startsWith("name", filter)]
     );
 
     promise.then(
@@ -36,6 +38,7 @@ export function EventPage() {
         <SearchBar
           onChange={(e) => setFilter(e.target.value)}
           filter={filter}
+          onClickHandler={()=>navigate('/addevent')}
         />
         <div className="py-3 text-xl text-white">Loading...</div>
       </div>
@@ -44,7 +47,7 @@ export function EventPage() {
 
   return (
     <div className="bg-primary rounded-xl p-6 w-[1000px] ml-32 overflow-y-auto h-[800px]">
-      <SearchBar onChange={(e) => setFilter(e.target.value)} />
+      <SearchBar onChange={(e) => setFilter(e.target.value)} onClickHandler={()=>navigate('/addevent')}/>
       {events.map((e) => (
         <EventCard
           title={e.name}
