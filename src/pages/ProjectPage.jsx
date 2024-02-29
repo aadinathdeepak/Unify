@@ -33,16 +33,16 @@ export function ProjectPage() {
   }, [filter]);
 
   if(projects.length==0){
-    return <div className="bg-primary rounded-xl p-6 w-[1000px] ml-32">
+    return <div className="bg-primary rounded-xl p-6 w-full ml-32">
       <SearchBar onChange={(e)=>setFilter(e.target.value)} filter={filter} onClickHandler={()=>navigate("/addproject")}/>
       <div className="py-3 text-xl text-white">Loading...</div>
     </div>
   }
 
   return (
-    <div className="bg-primary rounded-xl p-6 w-[1000px] ml-32 overflow-y-auto h-[800px]">
+    <div className="bg-primary rounded-xl p-6 w-[1000px] ml-32 overflow-y-auto h-full">
       <SearchBar onChange={(e)=>setFilter(e.target.value)} onClickHandler={()=>navigate("/addproject")}/>
-      <div className="flex flex-col">
+      <div className="flex flex-cols">
       {projects.map((e) => (
         <ProjectCard
           title={e.name}
