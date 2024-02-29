@@ -5,7 +5,6 @@ import { ForumInputBoxBig } from "../components/ForumInputBoxBig";
 import { useState } from "react";
 import { Client, Databases, ID } from "appwrite";
 import {EventDate} from "../components/EventDate";
-import EventPic from ".././assets/eventpic.png";
 
 const client = new Client()
   .setEndpoint("https://cloud.appwrite.io/v1")
@@ -16,23 +15,25 @@ const database = new Databases(client);
 export function AddEvent() {
     const [name, setName] = useState("");
     const [description, setDescription] = useState("");
-    const [requirements, setRequirements] = useState("");
+    const [image_url,setImg_url] = useState("")
+    const [date,setDate] = useState(null)
     const [isSubmitting, setIsSubmitting] = useState(false);
   
     const handleSubmit = () => {
       setIsSubmitting(true);
   
-      const project = {
+      const event = {
         name,
         description,
-        skills: requirements.split(" "),
+        image_url,
+        date
       };
   
       const promise = database.createDocument(
         "65df74df667cadaa97e1",
-        "65df778338999c7e4b03",
+        "65df7f05999aba0a5552",
         ID.unique(),
-        project
+        event
       );
   
       promise.then(
@@ -40,7 +41,8 @@ export function AddEvent() {
           console.log(response);
           setName("");
           setDescription("");
-          setRequirements("");
+          setImg_url("");
+          setDate("");
           setIsSubmitting(false);
         },
         (error) => {
@@ -74,12 +76,12 @@ export function AddEvent() {
           value={description}
           onChange={(e) => setDescription(e.target.value)}
         />
-        <p className="text-text mt-2">Requirements</p>
+        <p className="text-text mt-2">Image URL</p>
         <ForumInputBox
-          value={requirements}
-          onChange={(e) => setRequirements(e.target.value)}
+          value={image_url}
+          onChange={(e) => setImg_url(e.target.value)}
         />
-        <EventDate/>
+        <EventDate onChange={(e)=>setDate(e.target.value)} value={date}/>
         <div>
           <button
             className="bg-black text-text mt-4 p-4 px-6 font-extrabold rounded-[23px]"
@@ -91,13 +93,9 @@ export function AddEvent() {
         </div>
       </div>
       <div className="flex items-center justify-center mt-36 flex-col">
-      <img className="size-48" src={EventPic}/>
-      <p className="text-text mt-8">
-        Upload Image
-      </p>
+        {image_url!==null?<img className="size-48" src={image_url}/>:<div></div>}
       </div>
       </div>
     </div>
   );
 }
-

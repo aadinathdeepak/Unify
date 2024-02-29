@@ -5,6 +5,7 @@ import { Home } from './pages/Home';
 import {Profile} from './pages/Profile';
 import { AddProject} from './pages/AddProject';
 import { NewForumPost } from './pages/NewForumPost';
+import { AddEvent } from './pages/AddEvent';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path='/profile' element={<Profile/>}/>
           <Route path='/addproject' element={<AddProject/>}/>
           <Route path='/newforum' element={<NewForumPost/>}/>
+          <Route path='/addevent' element={<AddEvent/>}/>
         </Routes>
       </BrowserRouter>
     </>
