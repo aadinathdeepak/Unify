@@ -5,6 +5,7 @@ import { ForumInputBoxBig } from "../components/ForumInputBoxBig";
 import { useState } from "react";
 import { Client, Databases, ID } from "appwrite";
 import {EventDate} from "../components/EventDate";
+import { useNavigate } from "react-router";
 
 const client = new Client()
   .setEndpoint("https://cloud.appwrite.io/v1")
@@ -18,7 +19,7 @@ export function AddEvent() {
     const [image_url,setImg_url] = useState("")
     const [date,setDate] = useState(null)
     const [isSubmitting, setIsSubmitting] = useState(false);
-  
+    const navigate = useNavigate();
     const handleSubmit = () => {
       setIsSubmitting(true);
   
@@ -62,7 +63,7 @@ export function AddEvent() {
             alt="Logo"
           />
         </div>
-        <img className="h-[50px] ml-4 mt-6 pt-4" src={cancel} alt="Cancel" />
+        <img className="h-[50px] ml-4 mt-6 pt-4" src={cancel} alt="Cancel" onClick={()=>navigate('/home')}/>
       </div>
       <div className="flex flex-wrap items-start">
       <div className="flex flex-wrap flex-col m-4 w-3/4 items-center">

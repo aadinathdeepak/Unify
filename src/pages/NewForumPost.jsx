@@ -4,6 +4,7 @@ import { ForumInputBox } from "../components/ForumInputBox";
 import { ForumInputBoxBig } from "../components/ForumInputBoxBig";
 import { Client, Databases, ID } from "appwrite";
 import { useState } from "react";
+import { useNavigate } from "react-router";
 
 const client = new Client()
   .setEndpoint("https://cloud.appwrite.io/v1")
@@ -15,6 +16,7 @@ export function NewForumPost(){
     const [question,setQuestion] = useState("");
     const [description, setDescription] = useState("");
     const [isCreating,setIsCreating] = useState(false);
+    const navigate = useNavigate();
     const handleSubmit = ()=>{
         setIsCreating(true)
         const forum = {
@@ -45,7 +47,7 @@ export function NewForumPost(){
             <div className="w-5/6">
             <img className="h-[90px] ml-12 pt-4 justify-start" src={logo}/>
             </div>
-            <img className="h-[50px] ml-4 mt-6 pt-4" src={cancel}/>
+            <img className="h-[50px] ml-4 mt-6 pt-4" src={cancel} onClick={()=>navigate('/home')}/>
         </div>
         <div className="flex flex-wrap flex-col m-4 items-center">
             <h1 className="flex flex-col text-text items-center text-[30px] font-bold">
